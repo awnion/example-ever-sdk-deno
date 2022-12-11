@@ -1,6 +1,6 @@
-# example-ever-sdk-deno
+# Example ever-sdk with Deno
 
-## Install DENO
+## Requirements
 
 ```bash
 brew install deno
@@ -8,9 +8,9 @@ brew install deno
 cargo install deno
 ```
 
-## Run
+Also we need docker for last example
 
-### Try naive
+## Try naive
 
 ```bash
 deno run -A deno.ts
@@ -18,21 +18,21 @@ deno run -A deno.ts
 
 This one should work but doesn't because @eversdk/lib-web is not a real node module and work only in browser.
 
-### Try load WASM manually
+## Try load WASM manually
 
 ```bash
 npm i @eversdk/lib-web # just for eversdk.wasm or you can download it manually
 deno run -A deno-custom-wasm.ts
 ```
 
-Manually try to load and we get new error.
+Manually try to load and we get a new error.
 
 ```log
 error: Uncaught ReferenceError: init is not defined
     await init(wasmModule);
 ```
 
-### Try load as `lib-node` instead of `lib-web`
+## Try load as `lib-node` instead of `lib-web`
 
 ```bash
 # current deno is either ubuntu 20.04 or debian11
