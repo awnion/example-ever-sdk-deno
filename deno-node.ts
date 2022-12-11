@@ -1,7 +1,7 @@
 import { TonClient } from "npm:@eversdk/core";
-import { libWeb } from "npm:@eversdk/lib-web";
+import { libNode } from "npm:@eversdk/lib-node";
 
-TonClient.useBinaryLibrary(libWeb);
+TonClient.useBinaryLibrary(libNode);
 
 const client = new TonClient();
 const { phrase } = await client.crypto.mnemonic_from_random({});
