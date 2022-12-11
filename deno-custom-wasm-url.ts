@@ -1,8 +1,10 @@
 import { TonClient } from "npm:@eversdk/core";
+// require npm i @eversdk/lib-web
 import { libWeb, libWebSetup } from "./node_modules/@eversdk/lib-web/index.js";
 
 // require npm i @eversdk/lib-web
 libWebSetup({
+  disableSeparateWorker: true,
   binaryURL: new URL(
     "./node_modules/@eversdk/lib-web/eversdk.wasm",
     import.meta.url,
