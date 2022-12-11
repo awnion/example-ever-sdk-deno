@@ -13,7 +13,7 @@ libWebSetup({
 
 TonClient.useBinaryLibrary(libWeb);
 // ------------------------^^^^^^
-// here it will complain in linter but it's OK
+// here linter will complain but it's OK
 
 const client = new TonClient();
 const { phrase } = await client.crypto.mnemonic_from_random({});
