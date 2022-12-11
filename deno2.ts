@@ -1,14 +1,15 @@
 import { TonClient } from "npm:@eversdk/core";
-import { libWeb, libWebSetup } from "npm:@eversdk/lib-web";
+import { libWeb, libWebSetup } from "./node_modules/@eversdk/lib-web/index.js";
 
 const eversdk_wasm = await Deno.readFile(
   "./node_modules/@eversdk/lib-web/eversdk.wasm",
 );
 const eversdk_module = new WebAssembly.Module(eversdk_wasm);
 
-// libWebSetup({
-//   loadModule: () => new Promise((resolve) => resolve(eversdk_module)),
-// });
+libWebSetup({
+  disableSeparateWorker: true,
+  loadModule: () => new Promise((resolve) => resolve(eversdk_module)),
+});
 
 TonClient.useBinaryLibrary(libWeb);
 
