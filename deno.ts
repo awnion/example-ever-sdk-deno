@@ -1,5 +1,5 @@
 import { TonClient } from "npm:@eversdk/core";
-import { libWeb } from "npm:@eversdk/lib-web";
+import { libWeb } from "npm:@eversdk/lib-web@1.44.1";
 
 TonClient.useBinaryLibrary(libWeb);
 

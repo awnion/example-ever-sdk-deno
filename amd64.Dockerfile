@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1.5
 
-ARG DENO_VERSION=1.36.1
+ARG DENO_VERSION=1.36.2
 ARG BIN_IMAGE=denoland/deno:ubuntu-${DENO_VERSION}
 
 FROM ${BIN_IMAGE} AS bin
